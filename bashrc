@@ -44,14 +44,14 @@ function temp(){
 # binary exponentiation
 function binpow(){
     echo 'll binpow (ll a, ll n) {'
-	echo 'll res = 1;'
-	echo 'while (n) {'
-	echo '  if (n & 1)'
+    echo 'll res = 1;'
+    echo 'while (n) {'
+    echo '  if (n & 1)'
     echo '      res=((res*a)%MOD);'
     echo '  a=((a*a)%MOD);'
-	echo '  n >>= 1;'
-	echo '  }'
-	echo '  return res;'
+    echo '  n >>= 1;'
+    echo '  }'
+    echo '  return res;'
     echo '}'
 }
 
