@@ -27,18 +27,24 @@ function t () {
     done
 }
 
+# executing past commands 
+alias 1='$(history 2 | head -n 1 | sed -r "s/([[:digit:]]+) (.*)/\2/") && history -d $(($(history 2 | head -n 1 | sed -r "s/([[:digit:]]+) (.*)/\1/")+1))'
+alias 2='$(history 3 | head -n 1 | sed -r "s/([[:digit:]]+) (.*)/\2/") && history -d $(($(history 3 | head -n 1 | sed -r "s/([[:digit:]]+) (.*)/\1/")+1))'
+alias 3='$(history 4 | head -n 1 | sed -r "s/([[:digit:]]+) (.*)/\2/") && history -d $(($(history 4 | head -n 1 | sed -r "s/([[:digit:]]+) (.*)/\1/")+1))'
+
+
 # TODO: replace aliases with function definitions
 # prints template
 function temp(){
-    echo "#include <iostream>"; 
-    echo "#define sf(x) scanf(\"%I64d\",&x)";
-    echo "#define pf(x) printf(\"%I64d\",x)";
-    echo "#define nl printf(\"\\n\")"; 
-    echo "typedef long long ll;";
-    echo "const ll MOD=1e9+7;";
-    echo "int main(){";
-    echo "    return 0;";
-    echo "}";
+  echo '#include <bits/stdc++.h>'
+  echo 'typedef long long ll;'
+  echo 'using namespace std;'
+  echo 'const ll MOD=1e9+7;'
+  echo 'int main(){'
+  echo '  ios_base::sync_with_stdio(false);'
+  echo '  cin.tie(NULL);'
+  echo '  return 0;'
+  echo '}'
 }
 
 # binary exponentiation
@@ -152,12 +158,5 @@ function euclidean(){
 # }
 # 
 
-
-
-alias vi='gvim -f'
-
-alias 1='history 2 | head -n 1 | sed -r "s/([[:digit:]]+) (.*)/\2/" | bash && history -d $(($1+1))'
-alias 2='history 3 | head -n 1 | sed -r "s/([[:digit:]]+) (.*)/\2/" | bash && history -d $(($1+1))'
-alias 3='history 4 | head -n 1 | sed -r "s/([[:digit:]]+) (.*)/\2/" | bash && history -d $(($1+1))'
 
 
