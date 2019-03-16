@@ -44,9 +44,10 @@ alias 3='$(history 4 | head -n 1 | sed -r "s/([[:digit:]]+) (.*)/\2/") && histor
 # prints template
 function temp(){
   echo '#include <bits/stdc++.h>'
+  echo "#define nl '\n'"
   echo 'typedef long long ll;'
   echo 'using namespace std;'
-  echo 'const ll MOD=1e9+7;'
+  echo 'const ll mod=1e9+7;'
   echo 'int main(){'
   echo '  ios_base::sync_with_stdio(false);'
   echo '  cin.tie(NULL);'
@@ -60,8 +61,8 @@ function binpow(){
     echo 'll res = 1;'
     echo 'while (n) {'
     echo '  if (n & 1)'
-    echo '      res=((res*a)%MOD);'
-    echo '  a=((a*a)%MOD);'
+    echo '      res=((res*a)%mod);'
+    echo '  a=((a*a)%mod);'
     echo '  n >>= 1;'
     echo '  }'
     echo '  return res;'
