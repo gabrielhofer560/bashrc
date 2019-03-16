@@ -156,9 +156,8 @@ function euclidean(){
 
 alias vi='gvim -f'
 
-alias 1='history 2 | head -n 1 | sed -r "s/[[:digit:]]+ (.*)/\1/" | bash && history -d $(($(history | wc -l)))'
-alias 2='history 3 | head -n 1 | sed -r "s/[[:digit:]]+ (.*)/\1/" | bash && history -d $(($(history | wc -l)))'
-alias 3='history 4 | head -n 1 | sed -r "s/[[:digit:]]+ (.*)/\1/" | bash && history -d $(($(history | wc -l)))'
-
+alias 1='history 2 | head -n 1 | sed -r "s/([[:digit:]]+) (.*)/\2/" | bash && history -d $(($1+1))'
+alias 2='history 3 | head -n 1 | sed -r "s/([[:digit:]]+) (.*)/\2/" | bash && history -d $(($1+1))'
+alias 3='history 4 | head -n 1 | sed -r "s/([[:digit:]]+) (.*)/\2/" | bash && history -d $(($1+1))'
 
 
