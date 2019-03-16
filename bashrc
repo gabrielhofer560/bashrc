@@ -28,9 +28,16 @@ function t () {
 }
 
 # executing past commands 
-alias 1='$(history 2 | head -n 1 | sed -r "s/([[:digit:]]+) (.*)/\2/") && history -d $(($(history 2 | head -n 1 | sed -r "s/([[:digit:]]+) (.*)/\1/")+1))'
-alias 2='$(history 3 | head -n 1 | sed -r "s/([[:digit:]]+) (.*)/\2/") && history -d $(($(history 3 | head -n 1 | sed -r "s/([[:digit:]]+) (.*)/\1/")+1))'
-alias 3='$(history 4 | head -n 1 | sed -r "s/([[:digit:]]+) (.*)/\2/") && history -d $(($(history 4 | head -n 1 | sed -r "s/([[:digit:]]+) (.*)/\1/")+1))'
+alias 1='$(history 2 | head -n 1 | sed -r "s/([[:digit:]]+) (.*)/\2/") && history -d $(($(history 1 | head -n 1 | sed -r "s/([[:digit:]]+) (.*)/\1/")))'
+alias 2='$(history 3 | head -n 1 | sed -r "s/([[:digit:]]+) (.*)/\2/") && history -d $(($(history 1 | head -n 1 | sed -r "s/([[:digit:]]+) (.*)/\1/")))'
+alias 3='$(history 4 | head -n 1 | sed -r "s/([[:digit:]]+) (.*)/\2/") && history -d $(($(history 1 | head -n 1 | sed -r "s/([[:digit:]]+) (.*)/\1/")))'
+
+
+
+
+
+
+
 
 
 # TODO: replace aliases with function definitions
