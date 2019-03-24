@@ -21,3 +21,6 @@ The following is an example of compiling file.cpp and running the executable
 on 5 input files in1, in2, ..., in5.
 
 `$ t file.cpp in in2 in3 in4 in5`
+
+t is variadic, so any number (greater than zero) of input files can be applied.
+
