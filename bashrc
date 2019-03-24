@@ -28,30 +28,23 @@ function t () {
 }
 
 # executing past commands 
-alias 1='$(history 2 | head -n 1 | sed -r "s/([[:digit:]]+) (.*)/\2/") && history -d $(($(history 1 | head -n 1 | sed -r "s/([[:digit:]]+) (.*)/\1/")))'
-alias 2='$(history 3 | head -n 1 | sed -r "s/([[:digit:]]+) (.*)/\2/") && history -d $(($(history 1 | head -n 1 | sed -r "s/([[:digit:]]+) (.*)/\1/")))'
-alias 3='$(history 4 | head -n 1 | sed -r "s/([[:digit:]]+) (.*)/\2/") && history -d $(($(history 1 | head -n 1 | sed -r "s/([[:digit:]]+) (.*)/\1/")))'
-alias 0='history 4; history -d $(history | wc -l)'
-alias 4='./a.out'
+alias 0='./a.out'
 alias g='g++ -std=c++11 '
-alias v='vim'
-alias ls='ls -l'
+alias ls='ls -1'
 alias reloadbashrc='. ~/.bashrc'
-
-
 
 
 # TODO: replace aliases with function definitions
 # prints template
 function temp(){
   echo '#include <bits/stdc++.h>'
-  echo "#define nl printf(\"\n\")"
   echo 'typedef long long ll;'
   echo 'using namespace std;'
-  echo 'const ll mod=1e9+7;'
   echo 'll v0,v1,v2,v3,v4;'
   echo 'll n, i, j;'
   echo 'int main(){'
+  echo 'ios_base::sync_with_stdio(false);'
+  echo 'cin.tie(NULL);'
   echo '  return 0;'
   echo '}'
 }
@@ -126,6 +119,22 @@ function euclidean(){
   echo '  return d;'
   echo '}'
 }
+
+# checks primality of single integer n
+function isprime(){
+  echo 'bool isprime(ll n){ '
+  echo '  if (n <= 1) return false; '
+  echo '  if (n <= 3) return true; '
+  echo '  if (n%2 == 0 || n%3 == 0) return false; '
+  echo '  for (ll i=5; i*i<=n; i=i+6) '
+  echo '    if (n%i == 0 || n%(i+2) == 0) '
+  echo '      return false; '
+  echo '  return true; '
+  echo '} '
+}
+
+
+
 
 
 # BIT
