@@ -1,3 +1,4 @@
+## bash functions
 
 Some functions are defined to simply echo code to the terminal. 
 
@@ -9,9 +10,14 @@ command to insert my CP template into the cpp file.
 
 `$ temp > newfile.cpp`
 
+## aliases
+
 Also, some simple aliases are defined for efficiency. Not much time is saved
 with these but I still prefer to use them. 
 
+## usage for t
 
+The following is an example of compiling file.cpp and running the executable
+on 5 input files in1, in2, ..., in5.
 
-
+`$ t file.cpp in in2 in3 in4 in5`
