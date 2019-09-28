@@ -33,16 +33,3 @@ function t () {
         ./a.out < $val;
     done
 }
-
-function howtworunasm(){
-  rm it.out;
-  nasm -f elf32 "$1.asm";
-  ld -m elf_i386 "$1.o" -o it.out;
-  ./it.out
-}
-
-# function makevimrc(){
-#   rm .vimrc;
-# 
-# }
-
