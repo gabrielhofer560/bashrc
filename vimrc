@@ -6,7 +6,7 @@ map ' dd
 set cursorline
 
 
-iabbrev temp #include <bits/stdc++.h><CR>#define nl '\n'<CR>using namespace std;<CR>typedef long long ll;<CR>int main(){<CR>ios_base::sync_with_stdio(false);<CR>cin.tie(NULL);<CR>return 0;<CR>}<CR><Esc>
+iabbrev temp #include <bits/stdc++.h><CR>using namespace std;<CR>typedef long long ll;<CR>int main(){<CR>ios_base::sync_with_stdio(false);<CR>cin.tie(NULL);<CR>return 0;<CR>}<CR><Esc>
 set notimeout
 set syntax=on
 set expandtab                   "Always uses spaces instead of tabs
