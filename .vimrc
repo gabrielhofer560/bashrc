@@ -3,6 +3,8 @@ map <C-j> 6j
 map <C-k> 6k
 map <CR> O<Esc>
 map ' dd
+noremap z ZZ
+noremap ZZ <Esc>
 
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
