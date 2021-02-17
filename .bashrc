@@ -12,35 +12,12 @@ bind -x '"\C-j":" if [ -f main.cpp  ]; then vi main.cpp; fi "'
 bind -x '"\C-k":"if [ -f a.out ]; then rm a.out ; fi ; g++ main.cpp ; if [ -f a.out ]; then for i in in*; do ./a.out < $i; done ; fi "'
 
 alias newmain='gabe > main.cpp'
-
 alias p3='python3'
 alias l='tree'
 
-function r(){
-  if [ ${#@} -eq 0 ]
-  then
-    return 0
-  fi 
-  g++ ${1} 
-  shift 
-  for f in $@ 
-  do
-    if [ -f $f ]; then
-      echo "-------------------------------------------------------------"
-      echo "\t\t\t\t$f"
-      ./a.out < $f
-    fi
-  done 
-}
 
 
-function b(){
-  cd
-  sudo vim /sys/class/backlight/intel_backlight/brightness
-}
 
-
-#-----------------------------------------------------------
 gabe(){ 
 echo "#include <iostream>
 #include <vector>
