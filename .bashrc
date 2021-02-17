@@ -15,9 +15,6 @@ alias newmain='gabe > main.cpp'
 alias p3='python3'
 alias l='tree'
 
-
-
-
 gabe(){ 
 echo "#include <iostream>
 #include <vector>
