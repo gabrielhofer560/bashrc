@@ -1,41 +1,44 @@
+" ------------------------------------- "
+"               ESSENTIAL               "
 inoremap df <Esc>
 map <C-j> 6j
 map <C-k> 6k
 map <CR> O<Esc>
 map ' dd
-noremap z ZZ
+noremap m ZZ
 noremap ZZ <Esc>
+set expandtab                   
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2      
+set autoindent
+" ------------------------------------- "
 
+" goto place in file where you were 
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
-iabbrev prn System.out.println(
-iabbrev temp #include <bits/stdc++.h><CR>#define rep(i,a,n) for (int i=a;i<n;i++)<CR>#define per(i,a,n) for (int i=n-1;i>=a;i--)<CR>using namespace std;<CR><CR><CR><CR>int main(){<CR><CR><CR><CR>return 0;<CR>}<CR><Esc>
+if has("autocmd")
+  au BufReadPost * :syn match Keyword /N/ 
+  au BufReadPost * :syn match cType /ll/
+endif
 
-iabbrev pmat \begin{pmatrix}<CR><CR>\end{pmatrix}
-
-:set completeopt=longest,menuone
-
-
-color koehler
-set notimeout
-set expandtab                   
-set tabstop=2                   
-set softtabstop=2      
-set shiftwidth=2          
+set syntax=on
+set cursorline
 set shiftround         
 set number
 set showcmd
 filetype indent on
 set hlsearch
-set autoindent
 set incsearch
-set syntax=on
-
-
-
-
+set clipboard=unnamed
+" set listchars=tab:\|\ 
+" set list
+" commands don't timeout
+set notimeout
+" style
+" color koehler
 
 
 
