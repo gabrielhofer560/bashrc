@@ -8,6 +8,7 @@ MAG='\033[1;35m'
 BLUE='\033[1;34m'
 LCYAN='\033[1;36m'
 
+# removes a.out if it exists, compiles main.cpp, executes a.out for every input file
 bind -x '"\C-j":" if [ -f main.cpp  ]; then vi main.cpp; fi "'
 bind -x '"\C-k":"if [ -f a.out ]; then rm a.out ; fi ; g++ main.cpp ; if [ -f a.out ]; then for i in in*; do ./a.out < $i; done ; fi "'
 
@@ -21,12 +22,10 @@ alias in2='vi in2'
 alias in3='vi in3'
 alias in4='vi in4'
 
-
 function b(){
   cd
   sudo vim /sys/class/backlight/intel_backlight/brightness
 }
-
 
 #-----------------------------------------------------------
 gabe(){ 
