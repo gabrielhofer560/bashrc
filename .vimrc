@@ -8,9 +8,9 @@ map ' dd
 noremap m ZZ
 noremap ZZ <Esc>
 set expandtab                   
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2      
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4     
 set autoindent
 " ------------------------------------- "
 
@@ -21,7 +21,9 @@ endif
 
 if has("autocmd")
   au BufReadPost * :syn match Keyword /N/ 
+  au BufReadPost * :syn match Keyword /M/ 
   au BufReadPost * :syn match cType /ll/
+  au BufReadPost * :syn match cType /ld/
 endif
 
 set syntax=on
@@ -39,6 +41,9 @@ set clipboard=unnamed
 set notimeout
 " style
 " color koehler
+
+
+
 
 
 
