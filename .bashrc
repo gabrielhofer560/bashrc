@@ -10,8 +10,10 @@ LCYAN='\033[1;36m'
 
 # removes a.out if it exists, compiles main.cpp, executes a.out for every input file
 bind -x '"\C-j":" if [ -f main.cpp  ]; then vi main.cpp; fi "'
-bind -x '"\C-k":"if [ -f a.out ]; then rm a.out ; fi ; g++ main.cpp ; if [ -f a.out ]; then for i in in*; do ./a.out < $i; done ; fi "'
-alias main='gabe > main.cpp ; touch in '
+bind -x '"\C-k":" if [ -f a.out ]; then rm a.out ; fi ; g++ main.cpp ; if [ -f a.out ]; then for i in in*; do ./a.out < $i; done ; fi "'
+bind -x '"\C-f":" cd ../ ; echo -e ${BLUE} --- $(pwd) "'
+
+alias main='tmp > main.cpp ; touch in '
 alias in='vi in'
 alias in2='vi in2'
 alias in3='vi in3'
@@ -21,15 +23,8 @@ alias python='python3'
 alias p='python3'
 alias l='tree'
 
-
-function b(){
-  cd
-  sudo vim /sys/class/backlight/intel_backlight/brightness
-}
-
-
 #-----------------------------------------------------------
-gabe(){ 
+tmp(){ 
 echo "#include <iostream>
 #include <vector>
 #include <utility>
@@ -63,12 +58,12 @@ ll n, m;
 #define M for(int j=0;j<m;j++)
 
 int main(){
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
+
 
 
 }
-
-
-
 
 
 
